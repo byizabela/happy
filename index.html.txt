@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balões e Confetes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Wendy One', sans-serif;
+            background-image: url("http://www.planwallpaper.com/static/images/vladstudio-squares-Cool-Background.jpg");
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.5s ease-out; /* Transição para o movimento da tela */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .balloon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .balloon > div {
+            width: 104px;
+            height: 140px;
+            border-radius: 80% 80% 80% 80%;
+            margin: 0 10px;
+            position: relative;
+            padding: 10px;
+            box-shadow: inset 17px 7px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.8em;
+            color: white;
+            text-transform: uppercase;
+            animation: glow 1.5s ease-in-out infinite, bounce 1s ease-in-out infinite; /* Brilho e animação */
+        }
+
+        /* Efeito de brilho */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        }
+
+        /* Efeito de movimento do balão */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+
+        /* Balloon animations */
+        .balloon > div:nth-child(1) { background: rgba(182, 15, 97, 0.9); animation: balloon1 6s ease-in-out infinite; }
+        .balloon > div:nth-child(2) { background: rgba(242, 112, 45, 0.9); animation: balloon2 6s ease-in-out infinite; }
+        .balloon > div:nth-child(3) { background: rgba(45, 181, 167, 0.9); animation: balloon4 6s ease-in-out infinite; }
+        .balloon > div:nth-child(4) { background: rgba(190, 61, 244, 0.9); animation: balloon1 5s ease-in-out infinite; }
+        .balloon > div:nth-child(5) { background: rgba(180, 224, 67, 0.9); animation: balloon3 5s ease-in-out infinite; }
+        .balloon > div:nth-child(6) { background: rgba(242, 194, 58, 0.9); animation: balloon2 3s ease-in-out infinite; }
+        .balloon > div:nth-child(7) { background: rgba(45, 45, 167, 0.9); animation: balloon4 6s ease-in-out infinite; }
+        .balloon > div:nth-child(8) { background: rgba(244, 67, 67, 0.9); animation: balloon1 5s ease-in-out infinite; }
+
+        /* Balloon animations */
+        @keyframes balloon1 {
+            0%, 100% { transform: translateY(0) rotate(-6deg); }
+            50% { transform: translateY(-20px) rotate(8deg); }
+        }
+
+        @keyframes balloon2 {
+            0%, 100% { transform: translateY(0) rotate(6deg); }
+            50% { transform: translateY(-30px) rotate(-8deg); }
+        }
+
+        @keyframes balloon3 {
+            0%, 100% { transform: translate(0, -10px) rotate(6deg); }
+            50% { transform: translate(-20px, 30px) rotate(-8deg); }
+        }
+
+        @keyframes balloon4 {
+            0%, 100% { transform: translate(10px, -10px) rotate(-8deg); }
+            50% { transform: translate(-15px, 10px) rotate(10deg); }
+        }
+
+        /* Confetti */
+        .confetti {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+            top: -10px;
+            border-radius: 50%;
+            animation: confetti-fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(0) rotate(0); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Adicionando a pontinha do balão */
+        .balloon > div:nth-child(1)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;  
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(182, 15, 97, 0.9);  
+        }
+        .balloon > div:nth-child(2)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(242, 112, 45, 0.9);
+        }
+        .balloon > div:nth-child(3)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(45, 181, 167, 0.9);
+        }
+        .balloon > div:nth-child(4)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(190, 61, 244, 0.9);
+        }
+        .balloon > div:nth-child(5)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(180, 224, 67, 0.9);
+        }
+        .balloon > div:nth-child(6)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(242, 194, 58, 0.9);
+        }
+        .balloon > div:nth-child(7)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(45, 45, 167, 0.9);
+        }
+        .balloon > div:nth-child(8)::after {
+            content: "▲";  
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.6em;
+            color: rgba(244, 67, 67, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="balloon">
+            <div>P</div>
+            <div>A</div>
+            <div>R</div>
+            <div>A</div>
+            <div>B</div>
+            <div>É</div>
+            <div>N</div>
+            <div>S</div>
+        </div>
+    </div>
+
+    <script>
+        // Função para criar confetes
+        function createConfetti() {
+            for (let i = 0; i < 45; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Randomiza a posição horizontal e o tempo de animação
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's'; // Duração entre 2s e 5s
+
+                // Aleatoriza a cor
+                const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Função para alterar a cor de fundo
+        function changeBackground() {
+          const colors = ['#A2DFF7', '#FAD02E', '#E9C8D2', '#D6AEDD','#F5D0A9','#B8E0D2'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // Função para ativar a explosão de confetes e alterar o fundo
+        function triggerExplosion(event) {
+            changeBackground(); // Altera o fundo ao clicar
+            createConfetti(); // Cria confetes ao clicar
+        }
+
+        // Chama a função de explosão ao clicar no balão
+        document.querySelector('.balloon').addEventListener('click', triggerExplosion);
+    </script>
+</body>
+</html>
